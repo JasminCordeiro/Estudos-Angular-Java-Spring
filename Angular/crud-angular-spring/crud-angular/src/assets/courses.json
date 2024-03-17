@@ -1,10 +1,19 @@
 [
 
+
     {"_id": "1", "name": "Angular", "category": "Front-end"},
     {"_id": "2", "name": "JAVA", "category": "Back-end"},
     {"_id": "3", "name": "C", "category": "Back-end"},
-    {"_id": "1", "name": "Angular", "category": "Front-end"},
-    {"_id": "2", "name": "JAVA", "category": "Back-end"},
-    {"_id": "3", "name": "C", "category": "Back-end"}
+    {"_id": "4", "name": "Python", "category": "Back-end"},
+    {"_id": "5", "name": "React", "category": "Front-end"},
+    {"_id": "6", "name": "JavaScript", "category": "Front-end"},
+    {"_id": "7", "name": "Ruby", "category": "Back-end"},
+    {"_id": "8", "name": "Swift", "category": "Mobile"},
+    {"_id": "9", "name": "Vue.js", "category": "Front-end"},
+    {"_id": "10", "name": "Go", "category": "Back-end"},
+    {"_id": "11", "name": "PHP", "category": "Back-end"},
+    {"_id": "12", "name": "Kotlin", "category": "Mobile"}
+
+
 
 ]
