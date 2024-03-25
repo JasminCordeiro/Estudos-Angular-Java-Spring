@@ -49,13 +49,24 @@ main{
     font-weight: 300;
 
     b{
-      background: -webkit-linear-gradient(180deg, $light-primary-color, $secondary-color);
+      background: -webkit-linear-gradient(360deg, $primary-color, $light-primary-color);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-style: normal;
     }
   }
 }
+
+.cta-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+
 
 @media (min-width: 1080px) {
   .main-section{
