@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 
   padding: 40px 70px;
 
-  background: $primary-color;
+  background: $bg-secondary;
   color: white;
 
   text-align: justify;
@@ -24,6 +24,7 @@
 
   .text{
     flex: 1;
+    margin-bottom: 20px;
 }
 
   form{
@@ -31,7 +32,7 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
 
     width: 100%;
@@ -40,7 +41,7 @@
       border: none;
       border-bottom: 1px solid white;
       width: 100%;
-
+      color: white;
       height: 60px;
       margin-bottom: 40px;
 
@@ -52,7 +53,7 @@
 
 }
 
-@media (min-width: 1080) {
+@media (min-width: 1080px) {
   .form-section{
     flex-direction: row;
     gap: 115px ;
