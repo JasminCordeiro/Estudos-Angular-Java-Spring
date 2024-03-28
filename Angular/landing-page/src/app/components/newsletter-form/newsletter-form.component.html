@@ -10,7 +10,7 @@
       <input id="name" formControlName="name">
       <label for="email">E-mail</label>
       <input id="email" formControlName="email">
-      <btn-primary btn-Text="se inscreva" variant="secondary" (submit)="onSubmit()" [disabled]="!newsletterForm.valid"></btn-primary>
+      <btn-primary btn-Text="se inscreva" variant="secondary" (submit)="onSubmit()" [disabled]="!newsletterForm.valid " [loading]="loading()"></btn-primary>
   </form>
 
 </section>
