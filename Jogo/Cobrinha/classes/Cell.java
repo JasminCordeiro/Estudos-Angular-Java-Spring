@@ -22,7 +22,7 @@ public class Cell{
     public int getCol() {
         return col;
     }
-    
+       
 
 }
 
