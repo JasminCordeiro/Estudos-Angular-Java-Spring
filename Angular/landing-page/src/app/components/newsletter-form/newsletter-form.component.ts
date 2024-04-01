@@ -2,8 +2,6 @@ import { Component, signal } from '@angular/core';
 import { BtnPrimaryComponent } from '../btn-primary/btn-primary.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NewsletterService } from '../../services/newsletter.service';
-import { HttpClientModule } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'newsletter-form',
