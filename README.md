@@ -6,3 +6,5 @@ Este repositório é dedicado ao aprendizado das seguintes tecnologias:
 - **Angular**: Um framework de desenvolvimento front-end para a criação de aplicativos web, mantido pelo Google.
 - **Spring**: Um framework de desenvolvimento back-end para a construção de aplicativos Java.
 
+# Portfolio
+- Nesse repositório estou fazendo minha primeira versão do meu portfolio
