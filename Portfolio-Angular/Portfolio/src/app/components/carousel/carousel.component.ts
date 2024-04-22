@@ -14,6 +14,9 @@ export class CarouselComponent implements OnInit, AfterViewInit {
   @ViewChild('nextButton') nextButtonRef!: ElementRef<HTMLButtonElement>;
   @ViewChildren('carouselItem') carouselItemsRefs!: QueryList<ElementRef<HTMLDivElement>>;
 
+  private currentIndex = 0;
+  private itemsPerPage = 3;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,41 +25,48 @@ export class CarouselComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.setupCarousel();
+    window.addEventListener('resize', this.setupCarousel.bind(this));
   }
 
   setupCarousel(): void {
     const prevButton = this.prevButtonRef.nativeElement;
     const nextButton = this.nextButtonRef.nativeElement;
-    const carouselItems = this.carouselItemsRefs.map(ref => ref.nativeElement);
-
-    let currentIndex = 0;
-    const itemsPerPage = 3;
-
-    updateVisibility();
 
     prevButton.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex -= itemsPerPage;
-        updateVisibility();
+      if (this.currentIndex > 0) {
+        this.currentIndex -= this.itemsPerPage;
+        this.updateVisibility();
       }
     });
 
     nextButton.addEventListener('click', () => {
-      if (currentIndex < carouselItems.length - itemsPerPage) {
-        currentIndex += itemsPerPage;
-        updateVisibility();
+      const carouselItems = this.carouselItemsRefs.toArray(); // Corrigido: Convertido para array
+      if (this.currentIndex < carouselItems.length - this.itemsPerPage) {
+        this.currentIndex += this.itemsPerPage;
+        this.updateVisibility();
       }
     });
 
-    function updateVisibility() {
-      carouselItems.forEach((item: HTMLElement, index: number) => {
-        // Calcule o índice inicial e final dos itens a serem exibidos
-        const startIndex = currentIndex;
-        const endIndex = Math.min(startIndex + itemsPerPage, carouselItems.length);
-
-        // Defina o estilo de exibição com base no índice atual
-        item.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
-      });
+    this.updateItemsPerPage(); // Corrigido: Chamada inicial para definir o número correto de itens por página
+  }
+  updateItemsPerPage(): void {
+    if (window.innerWidth <= 768) { // Para telas menores ou iguais a 768 pixels de largura (mobile)
+      this.itemsPerPage = 1; // Apenas um item por página no mobile
+    } else {
+      this.itemsPerPage = 3; // Três itens por página para telas maiores que 768 pixels de largura (desktop)
     }
+    this.updateVisibility(); // Atualiza a visibilidade dos itens após a alteração do número de itens por página
+  }
+
+  updateVisibility(): void {
+    const carouselItems = this.carouselItemsRefs.toArray(); // Corrigido: Convertido para array
+    carouselItems.forEach((item: ElementRef<HTMLDivElement>, index: number) => {
+      // Calcule o índice inicial e final dos itens a serem exibidos
+      const startIndex = this.currentIndex;
+      const endIndex = Math.min(startIndex + this.itemsPerPage, carouselItems.length);
+
+      // Defina o estilo de exibição com base no índice atual
+      item.nativeElement.style.display = index >= startIndex && index < endIndex ? 'block' : 'none';
+    });
   }
 }
