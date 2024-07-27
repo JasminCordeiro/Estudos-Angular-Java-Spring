@@ -1,3 +1,20 @@
+$primary : #810081;
+$primary-light: #bd71bd;
+$text-primary: #fff;
+
+
+
+mat-toolbar{
+  background-color: #000;
+  color: $text-primary;
+}
+
+th{
+  font-size: 1rem;
+  padding: 0%;
+}
+
+
 table{
   width: 100%;
 }
