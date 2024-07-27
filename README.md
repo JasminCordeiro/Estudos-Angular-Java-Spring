@@ -7,4 +7,4 @@ Este repositório é dedicado ao aprendizado das seguintes tecnologias:
 - **Spring**: Um framework de desenvolvimento back-end para a construção de aplicativos Java.
 
 ## Fontes: 
- -Loiane Groner
+- Loiane Groner
