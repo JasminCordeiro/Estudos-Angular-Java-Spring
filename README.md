@@ -8,3 +8,4 @@ Este repositório é dedicado ao aprendizado das seguintes tecnologias:
 
 ## Fontes: 
 - Loiane Groner
+- Fernanda Kipper
